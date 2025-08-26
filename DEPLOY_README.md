@@ -111,6 +111,8 @@ Always **load the `.env` first**, then run the scripts in order:
 
    Populates GitHub **Variables (non-secrets)** and **Secrets (passwords, API keys, OIDC provider, SA email)**.
 
+#### Note: Scripts load_env.sh, 01_gcp_bootstrap.sh, 02_gcp_github_oidc.sh, and 03_secrets_and_first_deploy.sh are one-time setup. Script 04_sync_github_env.sh should also be run whenever you update your .env to sync GitHub Variables + Secrets for the CI/CD pipeline.
+
 ---
 
 ## 🔐 Secrets & Config
@@ -121,7 +123,7 @@ Always **load the `.env` first**, then run the scripts in order:
 - Project + billing IDs: `GOOGLE_PROJECT_ID`, `GOOGLE_BILLING_ID`
 - GitHub repo identifiers: `GITHUB_OWNER`, `GITHUB_REPO`
 - Optional OAuth keys (Google, GitHub, LinkedIn, etc.)
-- `DUMMY_SECRET` (for testing/debugging pipeline and confirming script 4 (secrets) execution)
+- `DUMMY_SECRET` (for testing/debugging pipeline)
 
 ### Script/CI-Managed (auto-filled later)
 - `GOOGLE_PROJECT_NUMBER`
